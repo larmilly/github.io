@@ -129,7 +129,7 @@ window.openEnvelopeAndViewReply = function(replyId) {
 
 function generateEnvelopeReplyText() {
     const sourcePool = [...customReplies];
-    const sentenceCount = Math.floor(Math.random() * (12 - 8 + 1)) + 8;
+    const sentenceCount = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
     let replyContent = "";
     for (let i = 0; i < sentenceCount; i++) {
         const randomSentence = sourcePool[Math.floor(Math.random() * sourcePool.length)];
@@ -403,7 +403,7 @@ function handleSendEnvelope() {
         addMessage({ id: Date.now(), sender: 'user', text: `【寄出的信】\n${text}`, timestamp: new Date(), status: 'sent', type: 'normal' });
     }
 
-    const minHours = 10, maxHours = 24;
+    const minHours = 8, maxHours = 16;
     const randomHours = Math.random() * (maxHours - minHours) + minHours;
     const replyTime = Date.now() + randomHours * 60 * 60 * 1000;
     const newId = 'env_' + Date.now() + '_' + Math.random().toString(36).substr(2,4);
